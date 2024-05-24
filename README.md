@@ -58,17 +58,9 @@ CAPTURE
 
 Étape 2 :
 
-Il vous suffit de répondre la ville la plus proche de vous, par exemple ici Paris.
-
-CAPTURE
-
-Étape 3 :
-
-Une fois les données entrées, vous recevez dans la conversation la météo.
 
 >DEVNOTE:
->Gestion d'erreurs à faire ! (par exemple : AAAA ou FRTQBE ne doivent pas être considérée comme des villes et le bot redemande la localisation)
->Pouvoir choisir le jour
+>
 
 ## Conçu avec
 
