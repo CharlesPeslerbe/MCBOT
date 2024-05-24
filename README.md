@@ -53,11 +53,8 @@ _(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
 
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
-* **Jhon doe** _alias_ [@outout14](https://github.com/outout14)
-
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
-
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
+* **Charles Peslerbe** _alias_ [@outout14](https://github.com/CharlesPeslerbe)
+* **Charles Peslerbe** _alias_ [@outout14](https://github.com/CharlesPeslerbe)
 
 ## License
 
