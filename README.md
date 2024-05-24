@@ -1,61 +1,85 @@
 # Chatbot Telegram - API
 
-[![](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
-
-Chatbot Telegram dans le cadre du cours d'interopérabilité. L'objectif du chatbot est d'agir comme un assistant personnel.
+[![Build With Love](http://forthebadge.com/images/badges/built-with-love.svg)]()
 
 
-Il fonctionne à l'aide de 3 API, la première permet d'envoyer un message sur une conversation Telegram. 
-La seconde permet d'envoyer des informations météo.
-Pour finir une troisième permet de raconter une blague (notée de 0 à 10).
+## Description
+Mini projet de chatbot Telegram dans le cadre du cours d'interopérabilité. L'objectif du chatbot est d'agir comme un assistant personnel.
 
+Il fonctionne à l'aide de 3 API :
+1. La première permet d'envoyer un message sur une conversation Telegram. 
+2. La seconde permet d'envoyer des informations météo.
+3. La troisième permet de raconter une blague (notée de 0 à 10).
 
-## Pour commencer
+### Utilisation
 
-Entrez ici les instructions pour bien débuter avec votre projet...
-
-### Pré-requis
-
-Ce qu'il est requis pour commencer avec votre projet...
-
-- Programme 1
-- Programme 2
-- etc...
-
-### Installation
-
-Les étapes pour installer votre programme....
+Les étapes pour utiliser votre programme....
 
 Dites ce qu'il faut faire...
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
-
+_exemple_: Configurer vos tokens dans le fichier ....
+_exemple_: Démarrer le projet grâce à .. ``telnet mapscii.me`` pour commencer ensuite [...]
 
 Ensuite vous pouvez montrer ce que vous obtenez au final...
+_exemple_: Le projet devrait ensuite démarrer correctement en éxécutant ...
 
-## Fabriqué avec
+Maintenant rendez-vous sur votre application Telegram et vous pouvez commencer
 
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
+##### Météo
 
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IntelliJ IDEA - IDE pour les languages basés sur JAVA
+Étape 1 :
 
-## Contributing
+Si vous envoyez "météo" au bot, il vous réponds en vous demandant votre localisation.
 
-Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](https://example.org) pour savoir comment le faire.
+CAPTURE
 
-## Versions
-Listez les versions ici 
-_exemple :_
-**Dernière version stable :** 5.0
-**Dernière version :** 5.1
-Liste des versions : [Cliquer pour afficher](https://github.com/your/project-name/tags)
-_(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
+Étape 2 :
 
+Il vous suffit de répondre la ville la plus proche de vous, par exemple ici Paris.
+
+CAPTURE
+
+Étape 3 :
+
+Une fois les données entrées, vous recevez dans la conversation la météo.
+
+>DEVNOTE:
+>Gestion d'erreurs à faire ! (par exemple : AAAA ou FRTQBE ne doivent pas être considérée comme des villes et le bot redemande la localisation)
+>Pouvoir choisir le jour
+
+##### Blague
+
+Étape 1 :
+
+Si vous envoyez "blague" au bot, il vous réponds en vous demandant si vous voulez une blague nulle, moyenne ou excellente.
+_Vous pouvez aussi entrer manuellement une note allant de 0 à 10 sachant que 0=nulle et 10=excellente_
+
+CAPTURE
+
+Étape 2 :
+
+Il vous suffit de répondre la ville la plus proche de vous, par exemple ici Paris.
+
+CAPTURE
+
+Étape 3 :
+
+Une fois les données entrées, vous recevez dans la conversation la météo.
+
+>DEVNOTE:
+>Gestion d'erreurs à faire ! (par exemple : AAAA ou FRTQBE ne doivent pas être considérée comme des villes et le bot redemande la localisation)
+>Pouvoir choisir le jour
+
+## Conçu avec
+
+Les programmes logiciels et outils utilisés pour développer le projet
+
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IDE pour les languages basés sur JAVA
+* [Tomcat](https://tomcat.apache.org) -
+* [Maven](https://maven.apache.org) -
+* [API Telegram](https://core.telegram.org) -
+  
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
 * **Charles Peslerbe** _alias_ [@outout14](https://github.com/CharlesPeslerbe)
 * **Makalé Touré** _alias_ [@outout14](https://github.com/Makale-Toure)
-
-## License
-
-Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
