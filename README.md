@@ -1,7 +1,8 @@
 # Chatbot Telegram - API
-_(juste en dessous des badges sympatiques à placer)_
 
 [![](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
+
+[![Badge](https://forthebadge.com/images/badges/made-with-flutter.svg)](https://docs.flutter.dev)
 
 Une petite description du projet
 
