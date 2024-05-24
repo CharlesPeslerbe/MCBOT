@@ -2,7 +2,13 @@
 
 [![](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
-Une petite description du projet
+Chatbot Telegram dans le cadre du cours d'interopérabilité. L'objectif du chatbot est d'agir comme un assistant personnel.
+
+
+Il fonctionne à l'aide de 3 API, la première permet d'envoyer un message sur une conversation Telegram. 
+La seconde permet d'envoyer des informations météo.
+Pour finir une troisième permet de raconter une blague (notée de 0 à 10).
+
 
 ## Pour commencer
 
@@ -27,17 +33,11 @@ _exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [..
 
 Ensuite vous pouvez montrer ce que vous obtenez au final...
 
-## Démarrage
-
-Dites comment faire pour lancer votre projet
-
 ## Fabriqué avec
 
 Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
 
-_exemples :_
-* [Materialize.css](http://materializecss.com) - Framework CSS (front-end)
-* [Atom](https://atom.io/) - Editeur de textes
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IntelliJ IDEA - IDE pour les languages basés sur JAVA
 
 ## Contributing
 
@@ -54,7 +54,7 @@ _(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
 ## Auteurs
 Listez le(s) auteur(s) du projet ici !
 * **Charles Peslerbe** _alias_ [@outout14](https://github.com/CharlesPeslerbe)
-* **Charles Peslerbe** _alias_ [@outout14](https://github.com/CharlesPeslerbe)
+* **Makalé Touré** _alias_ [@outout14](https://github.com/Makale-Toure)
 
 ## License
 
