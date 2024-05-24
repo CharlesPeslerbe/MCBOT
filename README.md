@@ -25,7 +25,7 @@ _exemple_: Le projet devrait ensuite démarrer correctement en éxécutant ...
 
 Maintenant rendez-vous sur votre application Telegram et vous pouvez commencer
 
-##### Météo
+#### Météo
 
 Étape 1 :
 
@@ -47,7 +47,7 @@ Une fois les données entrées, vous recevez dans la conversation la météo.
 >Gestion d'erreurs à faire ! (par exemple : AAAA ou FRTQBE ne doivent pas être considérée comme des villes et le bot redemande la localisation)
 >Pouvoir choisir le jour
 
-##### Blague
+#### Blague
 
 Étape 1 :
 
