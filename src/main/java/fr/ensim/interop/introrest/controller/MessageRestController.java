@@ -26,11 +26,7 @@ public class MessageRestController {
 
 	private static String chatIdStevan="6605178163";
 
-
-
 	private RestTemplate restTemplate = new RestTemplate();
-
-
 
 	@PostMapping("/sendMsg")
 	public ResponseEntity<ApiResponseTelegram> envoyerMessage(@RequestBody MessageRequest msg){
@@ -48,8 +44,6 @@ public class MessageRestController {
 		String sendMessageUrl = telegramApiUrl + botToken + "/sendMessage";
 		ApiResponseTelegram messageResponse = restTemplate.postForObject(sendMessageUrl, msg, ApiResponseTelegram.class);
 		return ResponseEntity.ok().body(messageResponse);
-
-
 	}
 
 	@GetMapping("/getUpt")
@@ -65,5 +59,4 @@ public class MessageRestController {
 		ApiResponseUpdateTelegram updatesResponseFiltred =  restTemplate.getForObject(getUpdatesUrl + "?offset=" + (currentOffset), ApiResponseUpdateTelegram.class);
 		return ResponseEntity.ok().body(updatesResponseFiltred);
 	}
-
 }
