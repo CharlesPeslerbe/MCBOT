@@ -48,11 +48,7 @@ public class MessageRestController {
 		ApiResponseTelegram messageResponse = restTemplate.postForObject(sendMessageUrl, msg, ApiResponseTelegram.class);
 		return ResponseEntity.ok().body(messageResponse);
 
-
 	}
-
-
-
 	//Opérations sur la ressource Message
 
 }
