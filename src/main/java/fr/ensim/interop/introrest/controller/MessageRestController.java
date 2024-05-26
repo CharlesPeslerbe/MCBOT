@@ -2,11 +2,12 @@ package fr.ensim.interop.introrest.controller;
 
 import fr.ensim.interop.introrest.api.mc.MessageRequest;
 import fr.ensim.interop.introrest.model.telegram.ApiResponseTelegram;
-import fr.ensim.interop.introrest.model.telegram.Message;
+import fr.ensim.interop.introrest.model.telegram.ApiResponseUpdateTelegram;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +50,20 @@ public class MessageRestController {
 		return ResponseEntity.ok().body(messageResponse);
 
 	}
-	//Opérations sur la ressource Message
+
+	@GetMapping("/getUpt")
+	public ResponseEntity<ApiResponseUpdateTelegram> recevoirMaj(){
+		int currentOffset = 0;
+
+		String getUpdatesUrl = telegramApiUrl + botToken + "/getUpdates";
+		ApiResponseUpdateTelegram updatesResponse = restTemplate.getForObject(getUpdatesUrl, ApiResponseUpdateTelegram.class);
+		// On récupère le dernier l'offset du message qui vient d'être envoyé
+		if (updatesResponse != null){
+			currentOffset = updatesResponse.getResult().get(updatesResponse.getResult().size() -1).getUpdateId();
+		}
+		ApiResponseUpdateTelegram updatesResponseFiltred =  restTemplate.getForObject(getUpdatesUrl + "?offset=" + (currentOffset), ApiResponseUpdateTelegram.class);
+		return ResponseEntity.ok().body(updatesResponseFiltred);
+	}
+
 
 }

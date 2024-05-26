@@ -47,9 +47,9 @@ public class OpenWeatherRestController {
         if (weatherResponse.getStatusCode() != HttpStatus.OK) {
             return ResponseEntity.status(weatherResponse.getStatusCode()).body(null);
         }
-
         return ResponseEntity.ok().body(weatherResponse.getBody());
     }
+<<<<<<< HEAD
 
     @GetMapping("/forecast")
     public ResponseEntity<OpenWeatherForecast> meteoPrevision(@RequestParam("city") String cityName) {
@@ -81,5 +81,7 @@ public class OpenWeatherRestController {
         return ResponseEntity.ok().body(forecastResponse.getBody());
     }
 
+=======
+>>>>>>> 654b641b1498cf8ecb4835707c969b53416393e1
 }
 
