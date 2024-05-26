@@ -49,7 +49,6 @@ public class MessageRestController {
 		ApiResponseTelegram messageResponse = restTemplate.postForObject(sendMessageUrl, msg, ApiResponseTelegram.class);
 		return ResponseEntity.ok().body(messageResponse);
 
-
 	}
 
 	@GetMapping("/getUpt")
@@ -65,5 +64,6 @@ public class MessageRestController {
 		ApiResponseUpdateTelegram updatesResponseFiltred =  restTemplate.getForObject(getUpdatesUrl + "?offset=" + (currentOffset), ApiResponseUpdateTelegram.class);
 		return ResponseEntity.ok().body(updatesResponseFiltred);
 	}
+
 
 }
