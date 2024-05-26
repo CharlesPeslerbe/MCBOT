@@ -20,8 +20,5 @@ public class ClientRestTest {
 
 		//Exemple d'appel à l'API Météo
 
-		OpenWeatherRestController openWeatherRestController = new OpenWeatherRestController();
-		OpenWeather weather = openWeatherRestController.getWeatherByCityName("Paris").getBody();
-
 	}
 }
