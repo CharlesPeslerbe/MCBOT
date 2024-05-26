@@ -8,20 +8,15 @@ import org.springframework.web.client.RestTemplate;
 
 public class OpenWeatherRestController {
 
-        //Vous pouvez ajouter des méthodes ici pour appeler l'API OpenWeather
-        //https://openweathermap.org/api
+    //Vous pouvez ajouter des méthodes ici pour appeler l'API OpenWeather
 
     private static final String API_KEY = "" ;
 
-    @GetMapping(value = "/weather",params = {"lat","lon"})
-    public ResponseEntity<OpenWeather> meteo (
-            @RequestParam("lat") String lat,
-            @RequestParam("lon") String lon ){
-
+    @GetMapping(value = "/weather", params = {"city"})
+    public ResponseEntity<OpenWeather> meteo(@RequestParam("city") String city) {
         RestTemplate restTemplate = new RestTemplate();
-        OpenWeather openWeather = restTemplate.getForObject("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+API_KEY, OpenWeather.class, lat, lon);
+        OpenWeather openWeather = restTemplate.getForObject("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY, OpenWeather.class);
 
         return ResponseEntity.ok().body(openWeather);
     }
-    
 }
