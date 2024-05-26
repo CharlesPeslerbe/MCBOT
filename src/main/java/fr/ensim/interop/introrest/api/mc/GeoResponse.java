@@ -5,15 +5,13 @@ import lombok.Setter;
 
 import java.util.Map;
 
+@Setter
+@Getter
 public class GeoResponse {
 
     private String name;
     private Map<String, String> localNames;
-    @Setter
-    @Getter
     private String lat;
-    @Setter
-    @Getter
     private String lon;
     private String country;
     private String state;

@@ -1,25 +1,15 @@
 package fr.ensim.interop.introrest.api.mc;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Setter
+@Getter
 public class OpenWeather {
 
     private List<Weather> weather;
     private Main main;
 
-    public Main getMain() {
-        return main;
-    }
-
-    public void setMain(Main main) {
-        this.main = main;
-    }
-
-    public List<Weather> getWeather() {
-        return weather;
-    }
-
-    public void setWeather(List<Weather> weather) {
-        this.weather = weather;
-    }
 }
