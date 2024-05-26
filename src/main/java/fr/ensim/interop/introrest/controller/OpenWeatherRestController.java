@@ -40,9 +40,7 @@ public class OpenWeatherRestController {
         if (weatherResponse.getStatusCode() != HttpStatus.OK) {
             return ResponseEntity.status(weatherResponse.getStatusCode()).body(null);
         }
-
         return ResponseEntity.ok().body(weatherResponse.getBody());
     }
-
 }
 
