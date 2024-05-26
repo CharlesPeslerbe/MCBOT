@@ -1,14 +1,15 @@
 package fr.ensim.interop.introrest.client;
 
+import fr.ensim.interop.introrest.ListenerUpdateTelegram;
 import fr.ensim.interop.introrest.api.mc.OpenWeather;
 import fr.ensim.interop.introrest.controller.MessageRestController;
 import fr.ensim.interop.introrest.controller.OpenWeatherRestController;
 
 public class ClientRestTest {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-		String msg = "Attention votre compte à été piraté !";
+		//String msg = "Attention votre compte à été piraté !";
 		//Vous pouvez faire des tests d'appels d'API ici
 
 
@@ -20,5 +21,9 @@ public class ClientRestTest {
 
 		//Exemple d'appel à l'API Météo
 
+		//Polling
+		MessageRestController messageRestController = new MessageRestController();
+		ListenerUpdateTelegram listenerUpdateTelegram = new ListenerUpdateTelegram(messageRestController);
+		listenerUpdateTelegram.run();
 	}
 }
