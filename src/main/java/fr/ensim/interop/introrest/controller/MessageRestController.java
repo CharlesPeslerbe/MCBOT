@@ -27,6 +27,7 @@ public class MessageRestController {
 	private static String chatIdStevan="6605178163";
 
 	private RestTemplate restTemplate = new RestTemplate();
+	private int lastOffset = 0;
 
 	@PostMapping("/sendMsg")
 	public ResponseEntity<ApiResponseTelegram> envoyerMessage(@RequestBody MessageRequest msg){
@@ -48,15 +49,13 @@ public class MessageRestController {
 
 	@GetMapping("/getUpt")
 	public ResponseEntity<ApiResponseUpdateTelegram> recevoirMaj(){
-		int currentOffset = 0;
+		String getUpdatesUrl = telegramApiUrl + botToken + "/getUpdates?offset=" + (lastOffset + 1);
+		ApiResponseUpdateTelegram updateResponse = restTemplate.getForObject(getUpdatesUrl, ApiResponseUpdateTelegram.class);
 
-		String getUpdatesUrl = telegramApiUrl + botToken + "/getUpdates";
-		ApiResponseUpdateTelegram updatesResponse = restTemplate.getForObject(getUpdatesUrl, ApiResponseUpdateTelegram.class);
-		// On récupère le dernier l'offset du message qui vient d'être envoyé
-		if (updatesResponse != null){
-			currentOffset = updatesResponse.getResult().get(updatesResponse.getResult().size() -1).getUpdateId();
+		if (updateResponse != null && !updateResponse.getResult().isEmpty()) {
+			lastOffset = updateResponse.getResult().get(updateResponse.getResult().size() - 1).getUpdateId();
 		}
-		ApiResponseUpdateTelegram updatesResponseFiltred =  restTemplate.getForObject(getUpdatesUrl + "?offset=" + (currentOffset), ApiResponseUpdateTelegram.class);
-		return ResponseEntity.ok().body(updatesResponseFiltred);
+
+		return ResponseEntity.ok().body(updateResponse);
 	}
 }

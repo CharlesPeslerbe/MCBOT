@@ -5,6 +5,10 @@ public class MessageRequest {
     private String chat_id;
     private String text;
 
+    public MessageRequest() {
+        super();
+    }
+
     public String getChat_id() {
         return chat_id;
     }
@@ -21,12 +25,12 @@ public class MessageRequest {
         this.text = text;
     }
 
-    public MessageRequest(String text) {
-        this.text = text;
-    }
-
     public MessageRequest(String chat_id, String text) {
         this.chat_id = chat_id;
+        this.text = text;
+    }
+    public MessageRequest(String text) {
+        this.chat_id = "6821361859"; //notre id par défaut
         this.text = text;
     }
 }

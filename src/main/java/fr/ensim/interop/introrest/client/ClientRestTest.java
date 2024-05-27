@@ -1,9 +1,7 @@
 package fr.ensim.interop.introrest.client;
 
 import fr.ensim.interop.introrest.ListenerUpdateTelegram;
-import fr.ensim.interop.introrest.api.mc.OpenWeather;
 import fr.ensim.interop.introrest.controller.MessageRestController;
-import fr.ensim.interop.introrest.controller.OpenWeatherRestController;
 
 public class ClientRestTest {
 	
@@ -22,8 +20,8 @@ public class ClientRestTest {
 		//Exemple d'appel à l'API Météo
 
 		//Polling
-		MessageRestController messageRestController = new MessageRestController();
-		ListenerUpdateTelegram listenerUpdateTelegram = new ListenerUpdateTelegram(messageRestController);
-		listenerUpdateTelegram.run();
+		//MessageRestController messageRestController = new MessageRestController();
+		//ListenerUpdateTelegram listenerUpdateTelegram = new ListenerUpdateTelegram(messageRestController, handlerMessageTelegram);
+		//listenerUpdateTelegram.run();
 	}
 }

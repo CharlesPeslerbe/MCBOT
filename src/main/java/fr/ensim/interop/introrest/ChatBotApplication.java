@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ChatBotApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(ChatBotApplication.class, args);
+		ListenerUpdateTelegram listenerUpdateTelegram = new ListenerUpdateTelegram();
 	}
 	
 	
