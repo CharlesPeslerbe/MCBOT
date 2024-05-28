@@ -18,11 +18,11 @@ Cette API permet d'envoyer des messages sur la conversation Telegram.
 
 #### Météo 
 Si vous envoyez "météo" au bot, il renverra par défaut la météo du Mans.
- En précisant météo <nom de la ville>/<nombres de jours à afficher>, le bot renverra les informations correspondantes.
+ En précisant météo < nom de la ville > /<nombres de jours à afficher>, le bot renverra les informations correspondantes.
  
 ##### Gestion d'erreurs 
 - Si le <nombres de jours à afficher> est supérieur à 5, la réponse n'en affichera que 5.
-- Si le <nom de la ville> est inconnue, un message indiquant qu'aucunes prévisions pour ce nom n'a été trouvé.
+- Si le < nom de la ville > est inconnue, un message indiquant qu'aucunes prévisions pour ce nom n'a été trouvé.
 
 
 #### Blague
@@ -51,3 +51,7 @@ Les programmes logiciels et outils utilisés pour développer le projet :
 Les auteurs du projet sont ici !
 * **Charles Peslerbe** _alias_ [@CharlesPeslerbe](https://github.com/CharlesPeslerbe)
 * **Makalé Touré** _alias_ [@Makale-Toure](https://github.com/Makale-Toure)
+
+## TO-DO 
+
+Rajouter un gitignore pour les fichiers/dossiers non nécéssaire comme target ou .idea :)
