@@ -8,7 +8,7 @@ public class ChatBotApplication {
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(ChatBotApplication.class, args);
-		ListenerUpdateTelegram listenerUpdateTelegram = new ListenerUpdateTelegram();
+		ListenerUpdateTelegram listenerUpdateTelegramInstance;
 	}
 	
 	

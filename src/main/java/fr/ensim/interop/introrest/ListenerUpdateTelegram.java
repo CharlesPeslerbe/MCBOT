@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -35,6 +36,6 @@ public class ListenerUpdateTelegram implements CommandLineRunner {
 					e.printStackTrace();
 				}
 			}
-		}, 0, 1000);
+		}, 0, 5000);
 	}
 }

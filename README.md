@@ -11,67 +11,39 @@ Il fonctionne à l'aide de 3 API :
 2. La seconde permet d'envoyer des informations météo.
 3. La troisième permet de raconter une blague (notée de 0 à 10).
 
-### Utilisation
 
-Les étapes pour utiliser votre programme....
-
-Dites ce qu'il faut faire...
-
-_exemple_: Configurer vos tokens dans le fichier ....
-_exemple_: Démarrer le projet grâce à .. ``telnet mapscii.me`` pour commencer ensuite [...]
-
-Ensuite vous pouvez montrer ce que vous obtenez au final...
-_exemple_: Le projet devrait ensuite démarrer correctement en éxécutant ...
-
-Maintenant rendez-vous sur votre application Telegram et vous pouvez commencer
-
-#### Météo
-
-Étape 1 :
-
-Si vous envoyez "météo" au bot, il vous réponds en vous demandant votre localisation.
-
-CAPTURE
-
-Étape 2 :
-
-Il vous suffit de répondre la ville la plus proche de vous, par exemple ici Paris.
-
-CAPTURE
-
-Étape 3 :
-
-Une fois les données entrées, vous recevez dans la conversation la météo.
-
->DEVNOTE:
->Gestion d'erreurs à faire ! (par exemple : AAAA ou FRTQBE ne doivent pas être considérée comme des villes et le bot redemande la localisation)
->Pouvoir choisir le jour
-
-#### Blague
-
-Étape 1 :
-
-Si vous envoyez "blague" au bot, il vous réponds en vous demandant si vous voulez une blague nulle, moyenne ou excellente.
-_Vous pouvez aussi entrer manuellement une note allant de 0 à 10 sachant que 0=nulle et 10=excellente_
-
-CAPTURE
-
-Étape 2 :
+#### Météo - API OpenWeather
+Si vous envoyez "météo" au bot, il renverra par défaut la météo du Mans.
+ En précisant météo <nom de la ville>/<nombres de jours à afficher>, le bot renverra les informations correspondantes.
+ 
+##### Gestion d'erreurs 
+- Si le <nombres de jours à afficher> est supérieur à 5, la réponse n'en affichera que 5.
+- Si le <nom de la ville> est inconnue, un message indiquant qu'aucunes prévisions pour ce nom n'a été trouvé.
 
 
->DEVNOTE:
->
+#### Blague - API Vercel
+Si vous envoyez "blague" au bot, il vous renverra une blague qu'il aura lui même noté sur 10.
+
+##### Gestion d'erreurs
+- Si le mode entré est différent d'un des modes connu, la blague sera renvoyé en mode global par défaut.
+- Si aucun mode n'est défini, le mode global est celui par défaut.
+
+
+#### Gestion d'erreur globale
+
+Si une entrée est différente de "météo" ou "blaque", le chatbot indiquera l'erreurs et les différentes opérations qu'il est possible de faire.
+
 
 ## Conçu avec
 
-Les programmes logiciels et outils utilisés pour développer le projet
+Les programmes logiciels et outils utilisés pour développer le projet :
 
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IDE pour les languages basés sur JAVA
-* [Tomcat](https://tomcat.apache.org) -
-* [Maven](https://maven.apache.org) -
-* [API Telegram](https://core.telegram.org) -
+* [Tomcat](https://tomcat.apache.org) - Serveur d'applications
+* [Maven](https://maven.apache.org) - Outil de gestion et d'automatisation
+* [API Telegram](https://core.telegram.org) - API permettant aux développeurs d'intégrer les fonctionnalités de messagerie de Telegram
   
 ## Auteurs
-Listez le(s) auteur(s) du projet ici !
-* **Charles Peslerbe** _alias_ [@outout14](https://github.com/CharlesPeslerbe)
-* **Makalé Touré** _alias_ [@outout14](https://github.com/Makale-Toure)
+Les auteurs du projet sont ici !
+* **Charles Peslerbe** _alias_ [@CharlesPeslerbe](https://github.com/CharlesPeslerbe)
+* **Makalé Touré** _alias_ [@Makale-Toure](https://github.com/Makale-Toure)

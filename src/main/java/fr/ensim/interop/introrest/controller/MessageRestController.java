@@ -29,6 +29,9 @@ public class MessageRestController {
 	private RestTemplate restTemplate = new RestTemplate();
 	private int lastOffset = 0;
 
+
+
+
 	@PostMapping("/sendMsg")
 	public ResponseEntity<ApiResponseTelegram> envoyerMessage(@RequestBody MessageRequest msg){
 
@@ -55,7 +58,6 @@ public class MessageRestController {
 		if (updateResponse != null && !updateResponse.getResult().isEmpty()) {
 			lastOffset = updateResponse.getResult().get(updateResponse.getResult().size() - 1).getUpdateId();
 		}
-
 		return ResponseEntity.ok().body(updateResponse);
 	}
 }
