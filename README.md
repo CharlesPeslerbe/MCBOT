@@ -35,7 +35,7 @@ Si vous envoyez "blague" au bot, il vous renverra une blague qu'il aura lui mêm
 
 #### Gestion d'erreur globale
 
-Si une entrée est différente de "météo" ou "blaque", le chatbot indiquera l'erreurs et les différentes opérations qu'il est possible de faire.
+Si le message reçu de l'utilisateur est différent de "météo" ou "blague", le chatbot indiquera l'erreur et les différentes opérations qu'il est possible de faire.
 
 
 ## Conçu avec
