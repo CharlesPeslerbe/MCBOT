@@ -20,6 +20,7 @@ public class HandlerMessageTelegram {
     private final OpenWeatherRestController openWeatherRestController = new OpenWeatherRestController();
     private final RestTemplate restTemplate = new RestTemplate();
     private final String jokeApiUrl = "https://blague-api.vercel.app/api?mode=global";
+    private Integer daysCount = 1;
 
     public void handleMessage(List <Update> response) {
         if (response != null){
@@ -28,8 +29,13 @@ public class HandlerMessageTelegram {
                 if (message != null) {
                     String text = message.getText().toLowerCase();
                     if (text.contains("météo")) {
-                        String cityName = "Le Mans";
-                        sendWeatherForecast(cityName);
+                        String[] param = text.substring(6).split("/");
+                        String cityName = param[0]; //ville*
+                        if (param.length > 1){
+                            daysCount = Integer.parseInt(param[1]);
+                        }
+                        //String cityName = text.substring(6).trim();
+                        sendWeatherForecast(cityName, daysCount);
                     }
                     else if (text.contains("blague")){
                         sendJoke();
@@ -42,21 +48,25 @@ public class HandlerMessageTelegram {
     private String ForecastMessage(OpenWeatherForecast forecast) {
         StringBuilder message = new StringBuilder("Prévisions météo pour les prochaines heures :\n");
         forecast.getList().forEach(f -> {
+            String iconCode = f.getWeather().get(0).getIcon();
+            String iconUrl = "http://openweathermap.org/img/wn/" + iconCode + ".png";
             message.append(f.getDt_txt()).append(": ")
                     .append(f.getMain().getTemp()).append("°C, ")
-                    .append(f.getWeather().get(0).getDescription()).append("\n");
+                    .append(f.getWeather().get(0).getDescription()).append(" ")
+                    .append("\n");
+            //.append(iconUrl)
         });
         return message.toString();
     }
 
-    private void sendWeatherForecast(String cityName) {
-        ResponseEntity<OpenWeatherForecast> forecastResponse = openWeatherRestController.meteoPrevision(cityName);
+    private void sendWeatherForecast(String cityName, Integer daysCount) {
+        ResponseEntity<OpenWeatherForecast> forecastResponse = openWeatherRestController.meteoPrevision(cityName, daysCount);
         String forecastMessage;
 
         if (forecastResponse.getStatusCode() == HttpStatus.OK && forecastResponse.getBody() != null) {
             forecastMessage = ForecastMessage(forecastResponse.getBody());
         } else {
-            forecastMessage = "Aucunes prévisions météorologiques trouvées pour " + cityName + " :("; //mettre la valeur par défaut plutôt qu'else
+            forecastMessage = "Aucunes prévisions météorologiques trouvées pour " + cityName + " :(";
         }
 
         MessageRequest messageRequest = new MessageRequest(forecastMessage);

@@ -51,7 +51,7 @@ public class OpenWeatherRestController {
     }
 
     @GetMapping("/forecast")
-    public ResponseEntity<OpenWeatherForecast> meteoPrevision(@RequestParam("city") String cityName) {
+    public ResponseEntity<OpenWeatherForecast> meteoPrevision(@RequestParam("city") String cityName, @RequestParam("timestamp") Integer timestamp) {
 
         RestTemplate restTemplate = new RestTemplate();
         String geoApiUrl = GEO_API_URL + "?q=" + cityName + "&limit=1&appid=" + OPENWEATHER_API_KEY;
@@ -66,9 +66,12 @@ public class OpenWeatherRestController {
         // Récupération des coordonnées de la ville à partir de la réponse de l'API
         String lat = geoResponse.getBody()[0].getLat();
         String lon = geoResponse.getBody()[0].getLon();
+        // Un jour = 8 timestamp
+        timestamp *= 8;
+
 
         // Appel API pour récupérer les prévisions météorologiques à partir des coordonnées de la ville
-        String forecastApiUrl = FORECAST_API_URL + "?lat=" + lat + "&lon=" + lon + "&appid=" + OPENWEATHER_API_KEY + "&units=metric";
+        String forecastApiUrl = FORECAST_API_URL + "?lat=" + lat + "&lon=" + lon + "&cnt=" + timestamp + "&appid=" + OPENWEATHER_API_KEY + "&units=metric";
 
         ResponseEntity<OpenWeatherForecast> forecastResponse = restTemplate.getForEntity(forecastApiUrl, OpenWeatherForecast.class);
 
