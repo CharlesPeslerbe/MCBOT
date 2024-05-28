@@ -11,8 +11,12 @@ Il fonctionne à l'aide de 3 API :
 2. La seconde permet d'envoyer des informations météo.
 3. La troisième permet de raconter une blague (notée de 0 à 10).
 
+#### Message
+Cette API permet d'envoyer des messages sur la conversation Telegram.
+ Elle intègre aussi une méthode permettant d'afficher la dernière mise à jour ayant eu lieu sur la conversation.
 
-#### Météo - API OpenWeather
+
+#### Météo 
 Si vous envoyez "météo" au bot, il renverra par défaut la météo du Mans.
  En précisant météo <nom de la ville>/<nombres de jours à afficher>, le bot renverra les informations correspondantes.
  
@@ -21,11 +25,11 @@ Si vous envoyez "météo" au bot, il renverra par défaut la météo du Mans.
 - Si le <nom de la ville> est inconnue, un message indiquant qu'aucunes prévisions pour ce nom n'a été trouvé.
 
 
-#### Blague - API Vercel
+#### Blague
 Si vous envoyez "blague" au bot, il vous renverra une blague qu'il aura lui même noté sur 10.
 
 ##### Gestion d'erreurs
-- Si le mode entré est différent d'un des modes connu, la blague sera renvoyé en mode global par défaut.
+- Si le mode entré est différent d'un des modes connu, la blague sera renvoyée en mode global par défaut.
 - Si aucun mode n'est défini, le mode global est celui par défaut.
 
 
